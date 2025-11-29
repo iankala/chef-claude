@@ -1,23 +1,27 @@
-
-import ReactDOM from 'react-dom/client';
-
-function App() {
-  
-  function handleClick() {
-    console.log("I was clicked!")
-  }
-  
-  
-  
-  return (
-    <main className="container">
-      <img
-        src="https://picsum.photos/640/360"
-        alt="Placeholder image from Picsum"
-      />
-      <button onClick={handleClick}>Click me</button>
-    </main>
-  )
+export default function Main() {
+    const ingredients = ["Chicken", "Oregano", "Tomatoes"]
+    
+    /**
+     * Review Challenge:
+     * Map over the list of ingredients and render them as list items
+     * 
+     * Note: We're doing things a weird way here. Don't worry,
+     * we're building up to learning the right way 🙂
+     */
+    
+    return (
+        <main>
+            <form className="add-ingredient-form">
+                <input 
+                    type="text"
+                    placeholder="e.g. oregano"
+                    aria-label="Add ingredient"
+                />
+                <button>Add ingredient</button>
+            </form>
+            <ul>
+                {/* Render ingredientsList here */}
+            </ul>
+        </main>
+    )
 }
-
-ReactDOM.createRoot(document.getElementById('root')).render(<App />); 
