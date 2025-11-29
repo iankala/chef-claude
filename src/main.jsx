@@ -8,6 +8,8 @@ export default function Main(){
     e.preventDefault()
     const formData = new FormData(event.currentTarget)
     const newIngredient = formData.get("ingredient")
+    ingredients.push(newIngredient)
+
   }
 
     return(
