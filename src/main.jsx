@@ -1,14 +1,18 @@
-export default function Main(){
+import React from "react"
 
-  const ingredients = ["Tomatoes", "Chicken", "Soup"]
+export default function Main(){
+   
+
+  const [ingredients, setIngredients] = React.useState([])
   
-  const ingredientListItems = ingredients.map(ingredient => (<li key = {ingredients}>{ingredient}</li>))
+  const ingredientListItems = ingredients.map(ingredient => (<li key = {ingredient}>{ingredient}</li>))
 
   function submit(e) {
     e.preventDefault()
-    const formData = new FormData(event.currentTarget)
+    const formData = new FormData(e.currentTarget)
     const newIngredient = formData.get("ingredient")
-    ingredients.push(newIngredient)
+    setIngredients(prev => [...prev, newIngredient])
+    
 
   }
 
