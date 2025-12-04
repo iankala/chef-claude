@@ -7,9 +7,7 @@ export default function Main(){
   
   const ingredientListItems = ingredients.map(ingredient => (<li key = {ingredient}>{ingredient}</li>))
 
-  function submit(e) {
-    e.preventDefault()
-    const formData = new FormData(e.currentTarget)
+  function addRecipe(formData) {
     const newIngredient = formData.get("ingredient")
     setIngredients(prev => [...prev, newIngredient])
     
@@ -18,12 +16,12 @@ export default function Main(){
 
     return(
       <main>
-        <form onSubmit={submit}>
+        <form action={addRecipe}>
           <input 
             aria-label= "Add ingredient" className="input-field" 
             placeholder="e.g oregano" 
             type="text"
-            name="ingredient"
+            name="ingredient" 
           />
           
           <button className = "ingredient-btn">+ Add ingredient</button>
